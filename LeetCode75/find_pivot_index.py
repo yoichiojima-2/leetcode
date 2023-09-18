@@ -13,13 +13,30 @@
 
 
 def solution(nums):
-    return int()
+    cur = 0
+
+    if sum(nums[cur + 1 :]) == 0:
+        return cur
+
+    if sum(nums[: len(nums) - 1]) == 0:
+        return len(nums) - 1
+
+    print({"nums": nums, "cur": cur})
+
+    while cur < len(nums) - 2:
+        cur += 1
+        if sum(nums[:cur]) == sum(nums[cur + 1 :]):
+            return cur
+
+        print({"cur": cur})
+
+    return -1
 
 
-testcases = [[1, 7, 3, 6, 5, 6], [1, 2, 3], [2, 1, -1]]
+testcases = [[1, 7, 3, 6, 5, 6], [1, 2, 3], [2, 1, -1], [-1, -1, 1, 1, 0, 0]]
 
 for i in testcases:
     result = {}
     result["input"] = i
     result["output"] = solution(i)
-    print(result)
+    print(result, "\n")

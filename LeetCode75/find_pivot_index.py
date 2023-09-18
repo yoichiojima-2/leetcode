@@ -15,10 +15,10 @@
 def solution(nums):
     cur = 0
 
+    print({"nums": nums, "cur": cur})
+
     if sum(nums[cur + 1 :]) == 0:
         return cur
-
-    print({"nums": nums, "cur": cur})
 
     while cur < len(nums) - 2:
         cur += 1

@@ -8,10 +8,10 @@
 
 def solution(gain):
     idx = 0
-    attitude = gain[0]
-    max_attitude = gain[0]
+    attitude = 0
+    max_attitude = 0
     print({"attitude": attitude, "max_attitude": max_attitude})
-    for i in gain[1:]:
+    for i in gain:
         idx += 1
         attitude += i
         max_attitude = max(attitude, max_attitude)
@@ -21,7 +21,7 @@ def solution(gain):
     return max_attitude
 
 
-testcases = [[-5, 1, 5, 0, -7], [-4, -3, -2, -1, 4, 3, 2]]
+testcases = [[-5, 1, 5, 0, -7], [0, -4, -3, -2, -1, 4, 3, 2]]
 
 results = []
 for i in testcases:

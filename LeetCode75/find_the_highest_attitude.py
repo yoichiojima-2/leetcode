@@ -10,14 +10,18 @@ def solution(gain):
     idx = 0
     attitude = 0
     max_attitude = 0
+
     print({"attitude": attitude, "max_attitude": max_attitude})
+
     for i in gain:
         idx += 1
         attitude += i
         max_attitude = max(attitude, max_attitude)
+
         print(
             {"idx": idx, "gain": i, "attitude": attitude, "max_attitude": max_attitude}
         )
+
     return max_attitude
 
 

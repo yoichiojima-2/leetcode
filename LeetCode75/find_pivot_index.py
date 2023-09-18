@@ -14,27 +14,19 @@
 
 def solution(nums):
     cur = 0
-
     print({"nums": nums, "cur": cur})
-
     if sum(nums[cur + 1 :]) == 0:
         return cur
-
     while cur < len(nums) - 2:
         cur += 1
         if sum(nums[:cur]) == sum(nums[cur + 1 :]):
             return cur
-
         print({"cur": cur})
-
     if sum(nums[: len(nums) - 1]) == 0:
         cur = len(nums) - 1
-
         while nums[cur] == 0 and nums[cur - 1] == 0:
             cur -= 1
-
         return cur
-
     return -1
 
 

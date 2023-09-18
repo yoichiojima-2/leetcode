@@ -19,7 +19,7 @@ def solution(nums):
         return cur
 
     if sum(nums[: len(nums) - 1]) == 0:
-        return len(nums) - 1
+        pass
 
     print({"nums": nums, "cur": cur})
 
@@ -37,6 +37,6 @@ testcases = [[1, 7, 3, 6, 5, 6], [1, 2, 3], [2, 1, -1], [-1, -1, 1, 1, 0, 0]]
 
 for i in testcases:
     result = {}
-    result["input"] = i
+    result["testcase"] = i
     result["output"] = solution(i)
     print(result, "\n")

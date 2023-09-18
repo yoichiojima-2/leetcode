@@ -19,7 +19,15 @@ def solution(nums):
         return cur
 
     if sum(nums[: len(nums) - 1]) == 0:
-        pass
+        cur = len(nums) - 1
+
+        if nums[cur] != 0:
+            return cur
+
+        while nums[cur - 1] == 0:
+            cur -= 1
+            print({"cur": cur})
+            return cur
 
     print({"nums": nums, "cur": cur})
 
@@ -33,7 +41,14 @@ def solution(nums):
     return -1
 
 
-testcases = [[1, 7, 3, 6, 5, 6], [1, 2, 3], [2, 1, -1], [-1, -1, 1, 1, 0, 0]]
+testcases = [
+    [1, 7, 3, 6, 5, 6],
+    [1, 2, 3],
+    [2, 1, -1],
+    [-1, -1, 1, 1, 0, 0],
+    [-1, -1, 1, 1, 0, 1],
+    [-1, -1, 0, 1, 1, 0],
+]
 
 for i in testcases:
     result = {}

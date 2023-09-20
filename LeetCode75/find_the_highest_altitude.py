@@ -8,17 +8,17 @@
 
 def solution(gain):
     idx = 0
-    attitude = 0
-    max_attitude = 0
-    print({"attitude": attitude, "max_attitude": max_attitude})
+    altitude = 0
+    max_altitude = 0
+    print({"altitude": altitude, "max_altitude": max_altitude})
     for i in gain:
         idx += 1
-        attitude += i
-        max_attitude = max(attitude, max_attitude)
+        altitude += i
+        max_altitude = max(altitude, max_altitude)
         print(
-            {"idx": idx, "gain": i, "attitude": attitude, "max_attitude": max_attitude}
+            {"idx": idx, "gain": i, "altitude": altitude, "max_altitude": max_altitude}
         )
-    return max_attitude
+    return max_altitude
 
 
 testcases = [[-5, 1, 5, 0, -7], [0, -4, -3, -2, -1, 4, 3, 2]]

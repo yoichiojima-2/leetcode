@@ -29,3 +29,5 @@ for i in testcases:
     result["testcase"] = i
     result["output"] = solution(i[0], i[1])
     print(result)
+
+

@@ -1,17 +1,11 @@
-def removeDuplicates(nums):
-    look_cur = 1
-    edit_cur = 0 
-    while look_cur < len(nums) - 1:
-        if nums[look_cur] > nums[edit_cur]:
-            print(nums)
-            nums[edit_cur] = nums[look_cur]
-            edit_cur += 1
-            print(nums)
-            print()
-        look_cur += 1
+def solution(nums: list[int]):
+    cur = 0
+    for i in range(len(nums)):
+        if nums[cur] != nums[i]:
+            cur += 1
+            nums[cur] = nums[i]
+    return cur
 
-
-if __name__ == "__main__":
-    nums = [0,0,1,1,1,2,2,3,3,4] 
-    removeDuplicates(nums)
-    print(nums)
+nums = [0,0,1,1,1,2,2,3,3,4]
+index = solution(nums)
+print(nums, index)

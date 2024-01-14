@@ -25,7 +25,7 @@ mod test {
     }
 
     #[test]
-   fn test2() {
+    fn test2() {
         let mut nums: Vec<i32> = vec![0, 0, 1, 1, 1, 2, 2, 3, 3, 4];
         let result = solution(&mut nums);
         assert_eq!(result, 5 as i32);

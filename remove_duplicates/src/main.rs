@@ -1,8 +1,22 @@
-#[allow(dead_code, unused_mut)]
+#[allow(dead_code, unused_mut, unused_variables, unused_assignments)]
 
-fn solution(nums: &mut Vec<i32>) {
-    let mut last_looked_num: &i32 = &nums[0];
-    println!("{:?}", last_looked_num);
+fn solution(nums: &mut Vec<i32>) -> i32 {
+    let mut current_num = nums[0];
+    let mut index = 1;
+    loop {
+        println!("index {}", index);
+        if nums[index] == current_num {
+            nums[index] = nums[index + 1];
+            println!("swapped. {:?}", nums);
+            index += 1;
+        } else {
+            current_num += nums[index + 1];
+        }
+        if nums[index] > nums[index + 1] {
+            break
+        }
+    }
+    index as i32 
 }
 
 fn main() {

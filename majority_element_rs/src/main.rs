@@ -4,11 +4,12 @@ use std::collections::HashMap;
 
 fn solution(nums: Vec<i32>) -> i32 {
     let mut counter = HashMap::new();
-    let mut majority_num: i32 = 0;
-    let mut majority_count: i32 = 0;
     for n in nums {
         *counter.entry(n).or_insert(0) += 1
     }
+
+    let mut majority_num: i32 = 0;
+    let mut majority_count: i32 = 0;
     for (num, count) in &counter {
         if *count > majority_count {
             majority_num = *num;

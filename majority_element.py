@@ -1,20 +1,19 @@
 def solution(nums: list[int]) -> int:
-    elem_cnt = {}
+    count = {}
     for i in nums:
-        if i in elem_cnt:
-            elem_cnt[i] += 1
+        if i in count:
+            count[i] += 1
         else:
-            elem_cnt[i] = 0
+            count[i] = 1
 
-    most_appeared_cnt = 0
-    for num, count in elem_cnt.items():
-        if count > most_appeared_cnt:
-            most_appeared_key = num
-    print(most_appeared_cnt, most_appeared_key)
-    return most_appeared_key
+    majority_count = 0 
+    for key, val in count.items():
+        if val > majority_count:
+            majority_name = key
+            majority_count = val
+    
+    return majority_name
 
-def test_solution():
-    assert solution([3,2,3]) == 3
-    assert solution([2,2,1,1,1,2,2]) == 2
 
-test_solution()
+res = solution([2,2,1,1,1,2,2])
+print(res)

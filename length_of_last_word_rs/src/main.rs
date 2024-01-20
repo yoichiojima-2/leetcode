@@ -17,6 +17,8 @@ fn solution(s: String) -> i32 {
 }
 
 fn main() {
+    let res = solution(String::from("Hello World"));
+    println!("{:?}", res);
 }
 
 #[cfg(test)]

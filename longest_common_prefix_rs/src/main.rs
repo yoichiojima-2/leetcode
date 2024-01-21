@@ -18,8 +18,7 @@ fn solution(strs: Vec<&str>) -> String {
     strs[0][..min_length as usize].to_string()
 }
 
-fn main() {
-}
+fn main() {}
 
 #[cfg(test)]
 mod test {

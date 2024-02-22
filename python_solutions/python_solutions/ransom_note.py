@@ -15,5 +15,19 @@
 # Input: ransomNote = "aa", magazine = "aab"
 # Output: true
 
-def solution():
-    pass
+from collections import Counter
+
+
+def solution(ransom_note: str, magazine: str) -> bool:
+    letter_count = dict(Counter(magazine))
+
+    for i in ransom_note:
+        if i not in letter_count:
+            return False
+
+        if letter_count[i] == 0:
+            return False
+
+        letter_count[i] -= 1
+
+    return True

@@ -1,4 +1,4 @@
-from python.ransom_note import solution
+from python_solutions.ransom_note import solution
 
 
 def test_solution_1():

@@ -1,4 +1,4 @@
-from python.roman_to_integer import solution
+from python_solutions.roman_to_integer import solution
 
 def test_solution():
     assert solution("III") == 3

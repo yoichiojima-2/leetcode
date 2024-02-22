@@ -1,4 +1,4 @@
-from python.longest_common_prefix import solution
+from python_solutions.longest_common_prefix import solution
 
 def test_solution_1():
     assert solution(['flower', 'flow', 'flight']) == 'fl'

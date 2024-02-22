@@ -1,4 +1,4 @@
-from python.valid_palindrome import solution
+from python_solutions.valid_palindrome import solution
 
 
 def test_1():

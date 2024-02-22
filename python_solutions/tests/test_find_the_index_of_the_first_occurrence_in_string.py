@@ -1,4 +1,4 @@
-from python.find_the_index_of_the_first_occurrence_in_string import solution
+from python_solutions.find_the_index_of_the_first_occurrence_in_string import solution
 
 def test_1():
     res = solution(haystack = 'sadbutsad', needle = 'sad')

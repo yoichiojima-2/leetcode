@@ -1,4 +1,4 @@
-from python.length_of_the_word import solution
+from python_solutions.length_of_the_word import solution
 
 def test_solution_1():
     res = solution("Hello World")

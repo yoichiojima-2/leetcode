@@ -19,15 +19,3 @@ def solution(gain):
             {"idx": idx, "gain": i, "altitude": altitude, "max_altitude": max_altitude}
         )
     return max_altitude
-
-
-testcases = [[-5, 1, 5, 0, -7], [0, -4, -3, -2, -1, 4, 3, 2]]
-
-results = []
-for i in testcases:
-    res = {}
-    res["testcase"] = i
-    res["output"] = solution(i)
-    results.append(res)
-
-print(results)

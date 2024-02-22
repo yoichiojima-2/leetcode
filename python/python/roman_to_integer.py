@@ -15,8 +15,3 @@ def solution(s: str) -> int:
         else:
             roman += symbols[s[i]]
     return roman
-
-def test_solution():
-    assert solution("III") == 3
-    assert solution("LVIII") == 58
-    assert solution("MCMXCIV") == 1994

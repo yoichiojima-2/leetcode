@@ -28,20 +28,3 @@ def solution(nums):
             cur -= 1
         return cur
     return -1
-
-
-testcases = [
-    [1, 7, 3, 6, 5, 6],
-    [1, 2, 3],
-    [2, 1, -1],
-    [-1, -1, 1, 1, 0, 0],
-    [-1, -1, 1, 1, 0, 1],
-    [-1, -1, 0, 1, 1, 0],
-    [-1, 0, 1, 1, -1, 1],
-]
-
-for i in testcases:
-    result = {}
-    result["testcase"] = i
-    result["output"] = solution(i)
-    print(result, "\n")

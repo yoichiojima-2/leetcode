@@ -13,7 +13,3 @@ def solution(nums: list[int]) -> int:
             majority_count = val
     
     return majority_name
-
-
-res = solution([2,2,1,1,1,2,2])
-print(res)

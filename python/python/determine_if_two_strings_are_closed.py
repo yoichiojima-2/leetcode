@@ -20,14 +20,3 @@ def solution(word1, word2):
     if set(counter1.keys()) != set(counter2.keys()):
         return False
     return sorted(counter1.values()) == sorted(counter2.values())
-
-
-testcases = [("abc", "bca"), ("a", "aa"), ("cabbba", "abbccc")]
-
-for i in testcases:
-    result = {}
-    result["testcase"] = i
-    result["output"] = solution(i[0], i[1])
-    print(result)
-
-

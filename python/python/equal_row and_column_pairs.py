@@ -12,15 +12,3 @@ class Solution:
                     count += 1
 
         return count
-
-testcases = [
-    [[3,2,1],[1,7,6],[2,7,7]],
-    [[3,1,2,2],[1,4,4,5],[2,4,2,2],[2,4,2,2]]
-]
-
-results = []
-for i in testcases:
-    res = Solution().equalPairs(i)
-    results.append({"input": i, "output": res})
-
-print(results)

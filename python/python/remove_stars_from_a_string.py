@@ -19,16 +19,3 @@ class Solution:
 
         print({"message": "end of process", "s": s})
         return s
-
-testcases = [
-    "leet**cod*e",
-    "***erase*****"
-]
-
-results = []
-for i in testcases:
-    res = Solution().removeStars(i)
-    results.append({"input": i, "output": res})
-
-from pprint import pprint
-pprint(results)

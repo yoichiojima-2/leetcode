@@ -3,5 +3,5 @@
 version = 3
 
 [[package]]
-name = "roman_to_integer_rs"
+name = "max_profit"
 version = "0.1.0"

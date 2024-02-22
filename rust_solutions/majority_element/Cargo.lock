@@ -3,5 +3,5 @@
 version = 3
 
 [[package]]
-name = "length_of_last_word_rs"
+name = "majority_element"
 version = "0.1.0"

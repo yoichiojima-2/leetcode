@@ -1,0 +1,46 @@
+fn main(a: String, b: String) -> String {
+    println!("input: {}, {}", a, b);
+    let base: i32 = 2;
+    let a = a.chars().rev().collect::<String>();
+    let b = b.chars().rev().collect::<String>();
+    println!("rev: {}, {}", a, b);
+
+    let mut a_int: i32 = 0;
+    let mut b_int: i32 = 0;
+
+    for i in 0..a.len() {
+        let v1 = base.pow(i as u32);
+        let v2 = a.chars().nth(i).unwrap().parse();
+        a_int += base.pow(i as u32) * a.chars().nth(i).unwrap() as i32;
+        println!("i: {}, v1: {}, v2: {}, res: {}", i, v1, v2, a_int);
+    }
+
+    for i in 0..b.len() {
+        let v1: i32 = base.pow(i as u32);
+        let v2: i32 = b.chars().nth(i).unwrap().parse();
+        b_int += base.pow(i as u32) * b.chars().nth(i).unwrap() as i32;
+        println!("i: {}, v1: {}, v2: {}, res: {}", i, v1, v2, b_int);
+    }
+
+    println!("{}, {}", a_int, b_int);
+    "not implemented".to_string()
+}
+
+#[cfg(test)]
+mod test {
+    use super::*;
+
+    #[test]
+    fn test_1() {
+        let res = main("11".to_string(), "1".to_string());
+        println!("{:?}", res);
+        assert!(res == "100".to_string());
+    }
+
+    #[test]
+    fn test_2() {
+        let res = main("1010".to_string(), "1011".to_string());
+        println!("{:?}", res);
+        assert!(res == "10101".to_string());
+    }
+}

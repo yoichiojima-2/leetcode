@@ -1,4 +1,10 @@
-def climb_stairs(n: int) -> int:
+class Solution:
+    def climbStairs(self, n: int) -> int:
+        # return simpler_solution(n)
+        return optimized_solution(n)
+
+
+def optimized_solution(n):
     if n == 0 or n == 1:
         return 1
     dp = [0] * (n + 1)
@@ -8,8 +14,14 @@ def climb_stairs(n: int) -> int:
     return dp[n]
 
 
+# def simpler_solution(n):
+#     if n == 0 or n == 1:
+#         return 1
+#     else:
+#         return simpler_solution(n - 1) + simpler_solution(n - 2)
+
 def test_climb_stairs():
-    assert climb_stairs(0) == 1
-    assert climb_stairs(1) == 1
-    assert climb_stairs(2) == 2
-    assert climb_stairs(3) == 3
+    assert Solution().climbStairs(0) == 1
+    assert Solution().climbStairs(1) == 1
+    assert Solution().climbStairs(2) == 2
+    assert Solution().climbStairs(3) == 3

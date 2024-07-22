@@ -1,3 +1,4 @@
+from __future__ import annotations
 from typing import Iterable
 
 
@@ -16,6 +17,8 @@ class ListNode:
         return head.next
 
     def collect(self) -> Iterable[int]:
+        if self.next is None:
+            return [self.val]
         head = self
         while head is not None:
             yield head.val
@@ -23,22 +26,26 @@ class ListNode:
 
 
 def delete_duplicates(head: ListNode) -> ListNode | None:
-    cur = head
-    while cur.next.next is not None:
-        if cur.val == cur.next.val:
-            cur.next = cur.next.next
-        cur = cur.next
+    current = head
+    while current and current.next:
+        if current.val == current.next.val:
+            current.next = current.next.next
+        else:
+            current = current.next
     return head
-        
-
 
 
 def test_1():
-    ls = ListNode.new([1, 1, 2])
-    res = list(ls.collect())
-    assert res == [1, 2]
+    input_ = ListNode.new([1, 1, 2])
+    print("input:", list(input_.collect()))
+    res = delete_duplicates(input_)
+    print("output:", list(res.collect()))
+    assert list(res.collect()) == [1, 2]
+
 
 def test_2():
-    ls = ListNode.new([1, 1, 2, 3, 3])
-    res = list(ls.collect())
-    assert res == [1, 2, 3]
+    input_ = ListNode.new([1, 1, 2, 3, 3])
+    print("input:", list(input_.collect()))
+    res = delete_duplicates(input_)
+    print("output:", list(res.collect()))
+    assert list(res.collect()) == [1, 2, 3]

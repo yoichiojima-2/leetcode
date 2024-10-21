@@ -12,11 +12,24 @@ class TreeNode:
 
 class Solution:
     def isBalanced(self, root: Optional[TreeNode]) -> bool:
-        ...
-
+        return True
 
 @pytest.fixture
-def binary_tree() -> TreeNode:
+def balanced_binary_tree() -> TreeNode:
+    return TreeNode(
+        val=3,
+        left=TreeNode(
+            val=9
+        ),
+        right=TreeNode(
+            val=20,
+            left=TreeNode(val=15),
+            right=TreeNode(val=7)
+        )
+    )
+
+@pytest.fixture
+def unbalanced_binary_tree() -> TreeNode:
     return TreeNode(
         val=1,
         right=TreeNode(
@@ -28,5 +41,9 @@ def binary_tree() -> TreeNode:
         )
     )
 
-def test_solution(binary_tree: TreeNode):
+def test_solution(
+    balanced_binary_tree:TreeNode,
+    unbalanced_binary_tree: TreeNode
+):
+    assert Solution().isBalanced(balanced_binary_tree)
     assert not Solution().isBalanced(binary_tree)

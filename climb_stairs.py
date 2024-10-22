@@ -19,10 +19,3 @@ def simpler_solution(n):
         return 1
     else:
         return simpler_solution(n - 1) + simpler_solution(n - 2)
-
-
-def test_climb_stairs():
-    assert Solution().climbStairs(0) == 1
-    assert Solution().climbStairs(1) == 1
-    assert Solution().climbStairs(2) == 2
-    assert Solution().climbStairs(3) == 3

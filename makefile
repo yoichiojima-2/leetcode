@@ -16,5 +16,5 @@ pre-commit: clean
 	ruff check --fix .
 
 .PHONY: venv
-$(VENV)/.installed: pyproject.toml
+venv: pyproject.toml
 	poetry install

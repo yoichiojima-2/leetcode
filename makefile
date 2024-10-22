@@ -1,6 +1,8 @@
-.PHONY: test 
-test:
-	pytest -vvv .
+ENV=build/venv
+
+.PHONY: test
+test: venv
+	poetry run pytest -vvv .
 
 .PHONY: clean
 clean:
@@ -12,3 +14,7 @@ clean:
 .PHONY: pre-commit
 pre-commit: clean
 	ruff check --fix .
+
+.PHONY: venv
+$(VENV)/.installed: pyproject.toml
+	poetry install

@@ -1,10 +1,6 @@
-import sys
-from pathlib import Path
 import pytest
 
-sys.path.append(str(Path(__file__).parent.parent))
-
-from balanced_binary_tree import Solution, TreeNode
+from leetcode.balanced_binary_tree import Solution, TreeNode
 
 
 @pytest.fixture

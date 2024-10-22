@@ -1,9 +1,4 @@
-import sys
-from pathlib import Path
-
-sys.path.append(str(Path(__file__).parent.parent))
-
-from remove_duplicates import ListNode, delete_duplicates
+from leetcode.remove_duplicates import ListNode, delete_duplicates
 
 
 def test_1():

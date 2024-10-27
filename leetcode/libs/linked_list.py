@@ -1,4 +1,5 @@
+from __future__ import annotation
+
 class ListNode:
-    def __init__(self, val=0, next=None):
-        self.val = val
-        self.next = next
+    val: int = 0
+    next: ListNide = None

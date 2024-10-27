@@ -1,20 +1,12 @@
-ENV=build/venv
-
-.PHONY: test
-test: venv
-	poetry run pytest -vvv .
-
-.PHONY: clean
 clean:
-	ruff format .
-	find . -name "__pycache__" -exec rm -rf {} +
-	find . -name ".ruff_cache" -exec rm -rf {} +
-	find . -name ".pytest_cache" -exec rm -rf {} +
+	rm poetry.lock
+	find . -name "__pycache__" -type d -print -exec rm -rf {} +
+	find . -name ".pytest_cache" -type d -print -exec rm -rf {} +
+	find . -name ".ruff_cache" -type d -print -exec rm -rf {} +
 
-.PHONY: pre-commit
-pre-commit: clean
-	ruff check --fix .
+lint:
+	-isort .
+	-ruff check --fix .
+	-ruff format .
 
-.PHONY: venv
-venv: pyproject.toml
-	poetry install
+pre-commit: clean lint

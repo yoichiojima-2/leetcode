@@ -34,7 +34,7 @@ def unbalanced_binary_tree() -> TreeNode:
     # fmt: on
 
 @pytest.fixture
-def balanced_binary_tree_2() -> TreeNode:
+def unbalanced_binary_tree_2() -> TreeNode:
     return TreeNode(
         val = 1,
         left = TreeNode(
@@ -61,8 +61,8 @@ def balanced_binary_tree_2() -> TreeNode:
 def test_solution(
     balanced_binary_tree: TreeNode,
     unbalanced_binary_tree: TreeNode,
-    balanced_binary_tree_2: TreeNode,
+    unbalanced_binary_tree_2: TreeNode,
 ):
     assert Solution().isBalanced(balanced_binary_tree)
     assert not Solution().isBalanced(unbalanced_binary_tree)
-    assert Solution().isBalanced(balanced_binary_tree_2)
+    assert not Solution().isBalanced(unbalanced_binary_tree_2)

@@ -10,3 +10,6 @@ lint:
 	-ruff format .
 
 pre-commit: clean lint
+
+test: 
+	pytest -v

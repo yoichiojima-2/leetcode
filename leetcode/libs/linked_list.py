@@ -1,5 +1,9 @@
-from __future__ import annotation
+from __future__ import annotations
 
+from dataclasses import dataclass
+
+
+@dataclass
 class ListNode:
     val: int = 0
-    next: ListNide | None = None
+    next: ListNode | None = None

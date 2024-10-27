@@ -1,17 +1,29 @@
-from leetcode.remove_duplicates import ListNode, delete_duplicates
+import pytest
+
+from leetcode.libs.linked_list import ListNode
+from leetcode.remove_duplicates import delete_duplicates
 
 
-def test_1():
-    input_ = ListNode.new([1, 1, 2])
-    print("input:", list(input_.collect()))
-    res = delete_duplicates(input_)
-    print("output:", list(res.collect()))
-    assert list(res.collect()) == [1, 2]
+@pytest.fixture
+def linked_list_1() -> ListNode:
+    return ListNode(val=1, next=ListNode(val=1, next=ListNode(val=2)))
 
 
-def test_2():
-    input_ = ListNode.new([1, 1, 2, 3, 3])
-    print("input:", list(input_.collect()))
-    res = delete_duplicates(input_)
-    print("output:", list(res.collect()))
-    assert list(res.collect()) == [1, 2, 3]
+@pytest.fixture
+def linked_list_2() -> ListNode:
+    return ListNode(val=1, next=ListNode(val=2, next=ListNode(val=3)))
+
+
+def test_1(linked_list_1: ListNode):
+    res = delete_duplicates(linked_list_1)
+    assert res.val == 1
+    assert res.next.val == 2
+    assert res.next.next is None
+
+
+def test_2(linked_list_2: ListNode):
+    res = delete_duplicates(linked_list_2)
+    assert res.val == 1
+    assert res.next.val == 2
+    assert res.next.next.val == 3
+    assert res.next.next.next is None

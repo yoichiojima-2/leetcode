@@ -1,12 +1,6 @@
-from dataclasses import dataclass
 from typing import Optional
 
-
-@dataclass
-class TreeNode:
-    val: int
-    left: Optional["TreeNode"] = None
-    right: Optional["TreeNode"] = None
+from leetcode.libs.binary_tree import TreeNode
 
 
 class Solution:

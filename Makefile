@@ -12,4 +12,4 @@ lint:
 pre-commit: clean lint
 
 test: 
-	pytest -v
+	pytest -vvv

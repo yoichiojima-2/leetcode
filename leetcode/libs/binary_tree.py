@@ -1,9 +1,9 @@
+from __future__ import annotation
 from dataclasses import dataclass
-from typing import Optional
 
 
 @dataclass
 class TreeNode:
     val: int = 0
-    left: Optional["TreeNode"] = None
-    right: Optional["TreeNode"] = None
+    left: TreeNode | None = None
+    right: TreeNode | None = None

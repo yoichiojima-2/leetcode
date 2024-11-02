@@ -9,7 +9,7 @@ lint:
 	-ruff check --fix .
 	-ruff format .
 
-pre-commit: clean lint
+pre-commit: lint clean
 
 test: 
 	pytest -vvv

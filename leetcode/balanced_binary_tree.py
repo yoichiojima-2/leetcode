@@ -2,31 +2,20 @@ from leetcode.libs.binary_tree import TreeNode
 
 
 class Solution:
-    def getDepth(self, root: TreeNode | None) -> int:
-        if root is None:
+    def getDepth(self, root: TreeNode) -> int:
+        if not root:
             return 0
-        else:
-            return max(self.getDepth(root.left), self.getDepth(root.right)) + 1
+
+        left_depth = self.getDepth(root.left)
+        right_depth = self.getDepth(root.right)
+
+        if left_depth == -1 or right_depth == -1:
+            return -1
+
+        if abs(left_depth - right_depth) > 1:
+            return -1
+
+        return max(left_depth, right_depth) + 1
 
     def isBalanced(self, root: TreeNode | None) -> bool:
-        print(f"visiting: {root.val}")
-
-        if root is None:
-            return True
-
-        elif root.left is None and root.right is None:
-            return True
-
-        elif root.left is None and root.right is not None:
-            if root.right.left is not None or root.right.right is not None:
-                return False
-
-        elif root.right is None and root.left is not None:
-            if root.left.left is not None or root.left.right is not None:
-                return False
-
-        elif abs(self.getDepth(root.left) - self.getDepth(root.right)) > 1:
-            return False
-
-        else:
-            return self.isBalanced(root.left) and self.isBalanced(root.right)
+        return self.getDepth(root) != -1

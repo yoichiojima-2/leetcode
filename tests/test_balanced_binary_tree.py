@@ -1,4 +1,5 @@
 import pytest
+
 from leetcode.balanced_binary_tree import Solution, TreeNode
 
 
@@ -15,6 +16,18 @@ def balanced_binary_tree() -> TreeNode:
         ),
     )
     # fmt: on
+
+
+@pytest.fixture
+def balanced_binary_tree_2() -> TreeNode:
+    return TreeNode(
+        val=1,
+    )
+
+
+@pytest.fixture
+def balanced_binary_tree_3() -> TreeNode:
+    return TreeNode(val=1, left=TreeNode(val=2))
 
 
 @pytest.fixture
@@ -41,70 +54,56 @@ def unbalanced_binary_tree_2() -> TreeNode:
         right=TreeNode(val=2, right=TreeNode(val=3, right=TreeNode(val=4))),
     )
 
+
 @pytest.fixture
 def unbalanced_binary_tree_3() -> TreeNode:
     return TreeNode(
         val=1,
         left=TreeNode(
             val=2,
-            left=TreeNode(
-                val=3,
-                left=TreeNode(val=4),
-                right=TreeNode(val=4)
-            ),
-            right=TreeNode(val=3)
+            left=TreeNode(val=3, left=TreeNode(val=4), right=TreeNode(val=4)),
+            right=TreeNode(val=3),
         ),
-        right=TreeNode(val=2)
+        right=TreeNode(val=2),
     )
 
-
-@pytest.fixture
-def unbalanced_binary_tree_4() -> TreeNode:
-    return TreeNode(
-        val=1,
-    )
-
-@pytest.fixture
-def unbalanced_binary_tree_5() -> TreeNode:
-    return TreeNode(
-        val=1,
-        left=TreeNode(val=2)
-    )
 
 @pytest.fixture
 def empty_binary_tree() -> None:
     return None
 
+
 def test_solution(
     balanced_binary_tree: TreeNode,
+    balanced_binary_tree_2: TreeNode,
+    balanced_binary_tree_3: TreeNode,
     unbalanced_binary_tree: TreeNode,
     unbalanced_binary_tree_2: TreeNode,
     unbalanced_binary_tree_3: TreeNode,
-    unbalanced_binary_tree_4: TreeNode,
-    unbalanced_binary_tree_5: TreeNode,
     empty_binary_tree: TreeNode,
 ):
     assert Solution().isBalanced(balanced_binary_tree)
+    assert Solution().isBalanced(balanced_binary_tree_2)
+    assert Solution().isBalanced(balanced_binary_tree_3)
     assert not Solution().isBalanced(unbalanced_binary_tree)
     assert not Solution().isBalanced(unbalanced_binary_tree_2)
     assert not Solution().isBalanced(unbalanced_binary_tree_3)
-    assert Solution().isBalanced(unbalanced_binary_tree_4)
-    assert Solution().isBalanced(unbalanced_binary_tree_5)
     assert Solution().isBalanced(empty_binary_tree)
+
 
 def test_get_depth(
     balanced_binary_tree: TreeNode,
+    balanced_binary_tree_2: TreeNode,
+    balanced_binary_tree_3: TreeNode,
     unbalanced_binary_tree: TreeNode,
     unbalanced_binary_tree_2: TreeNode,
     unbalanced_binary_tree_3: TreeNode,
-    unbalanced_binary_tree_4: TreeNode,
-    unbalanced_binary_tree_5: TreeNode,
     empty_binary_tree: TreeNode,
 ):
     assert Solution().getDepth(balanced_binary_tree) == 3
-    assert Solution().getDepth(unbalanced_binary_tree) == 4
-    assert Solution().getDepth(unbalanced_binary_tree_2) == 4
-    assert Solution().getDepth(unbalanced_binary_tree_3) == 4
-    assert Solution().getDepth(unbalanced_binary_tree_4) == 1
-    assert Solution().getDepth(unbalanced_binary_tree_5) == 2
+    assert Solution().getDepth(balanced_binary_tree_2) == 1
+    assert Solution().getDepth(balanced_binary_tree_3) == 2
+    assert Solution().getDepth(unbalanced_binary_tree) == -1
+    assert Solution().getDepth(unbalanced_binary_tree_2) == -1
+    assert Solution().getDepth(unbalanced_binary_tree_3) == -1
     assert Solution().getDepth(empty_binary_tree) == 0

@@ -1,5 +1,6 @@
-from leetcode.libs.binary_tree import TreeNode
 from typing import Iterable
+
+from leetcode.libs.binary_tree import TreeNode
 
 
 class Solution:

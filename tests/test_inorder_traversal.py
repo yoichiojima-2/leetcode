@@ -33,11 +33,11 @@ def empty_binary_tree() -> None:
 
 
 def test_inorder_traversal(
-        binary_tree: TreeNode,
-        binary_tree_2: TreeNode,
-        binary_tree_3: TreeNode,
-        empty_binary_tree: None
-    ):
+    binary_tree: TreeNode,
+    binary_tree_2: TreeNode,
+    binary_tree_3: TreeNode,
+    empty_binary_tree: None,
+):
     res_1 = Solution().inorderTraversal(binary_tree)
     assert res_1 == [1, 2, 3]
 

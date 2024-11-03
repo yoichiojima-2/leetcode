@@ -39,7 +39,7 @@ def test_inorder_traversal(
     empty_binary_tree: None,
 ):
     res_1 = Solution().inorderTraversal(binary_tree)
-    assert res_1 == [1, 2, 3]
+    assert res_1 == [1, 3, 2]
 
     res_2 = Solution().inorderTraversal(binary_tree_2)
     assert res_2 == [4, 2, 6, 5, 7, 1, 3, 9, 8]

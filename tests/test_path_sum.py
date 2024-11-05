@@ -10,9 +10,7 @@ def binary_tree() -> TreeNode | None:
             val=4,
             left=TreeNode(
                 val=11,
-                left=TreeNode(
-                    val=7
-                ),
+                left=TreeNode(val=7),
                 right=TreeNode(val=2)
             ),
         ),

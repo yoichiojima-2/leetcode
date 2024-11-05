@@ -14,9 +14,7 @@ def binary_tree() -> TreeNode | None:
                 right=TreeNode(val=2)
             ),
         ),
-        right=TreeNode(
-            val=8
-        )
+        right=TreeNode(val=8)
     )
 
 def test_has_path_sum(binary_tree: TreeNode):

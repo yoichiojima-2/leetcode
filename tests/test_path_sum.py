@@ -1,6 +1,6 @@
 import pytest
 from leetcode.libs.binary_tree import TreeNode
-
+from leetcode.path_sum import Solution
 
 @pytest.fixture
 def binary_tree() -> TreeNode | None:
@@ -14,8 +14,17 @@ def binary_tree() -> TreeNode | None:
                 right=TreeNode(val=2)
             ),
         ),
-        right=TreeNode(val=8)
+        right=TreeNode(
+            val=8,
+            left=TreeNode(val=13),
+            right=TreeNode(
+                val=4,
+                right=TreeNode(val=1)
+            )
+        )
     )
 
 def test_has_path_sum(binary_tree: TreeNode):
-    ...
+    assert Solution.getPathSum(binary_tree, 22)
+    
+    

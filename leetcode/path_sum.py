@@ -6,7 +6,7 @@ from leetcode.libs.binary_tree import TreeNode
 @dataclass
 class Solution:
     def get_sums(self, root: TreeNode | None) -> list[int]:
-        print(f"root.val: {root.val}")
+        print(f"visiting...: {root.val}")
 
         if not root:
             return [0]

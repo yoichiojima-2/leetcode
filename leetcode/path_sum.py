@@ -18,11 +18,11 @@ class Solution:
 
         elif not root.left:
             print("left is None")
-            return [root.val, root.val + root.right.val]
+            return [root.val, root.val + self.get_sums(root.right)]
 
         elif not root.right:
             print("right is None")
-            return [root.val + root.left.val, root.val]
+            return [root.val + self.get_sums(root.left), root.val]
 
         return [
             *[i + root.val for i in self.get_sums(root.left)],

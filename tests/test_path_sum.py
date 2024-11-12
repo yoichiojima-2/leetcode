@@ -4,7 +4,7 @@ from leetcode.path_sum import Solution
 
 
 @pytest.fixture
-def binary_tree() -> TreeNode | None:
+def binary_tree() -> TreeNode:
     return TreeNode(
         val=5,
         left=TreeNode(
@@ -25,5 +25,23 @@ def binary_tree() -> TreeNode | None:
         )
     )
 
+
+@pytest.fixture
+def binary_tree_2() -> TreeNode:
+    return TreeNode(
+        val=1,
+        left=TreeNode(val=2)
+    )
+
+
+
 def test_has_path_sum(binary_tree: TreeNode):
     assert Solution().hasPathSum(binary_tree, 22)
+
+
+def test_has_path_sum_1():
+    assert not Solution().hasPathSum(None, 0)
+
+
+def test_has_path_sum_2(binary_tree_2):
+    assert not Solution().hasPathSum(binary_tree_2, 1)

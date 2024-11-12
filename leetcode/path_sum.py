@@ -12,12 +12,15 @@ class Solution:
             return [0]
 
         elif not root.left and not root.right:
+            print("left and right is None")
             return [root.val]
 
         elif not root.left:
+            print("left is None")
             return [root.val, root.val + root.right.val]
 
         elif not root.right:
+            print("right is None")
             return [root.val + root.left.val, root.val]
 
         return [

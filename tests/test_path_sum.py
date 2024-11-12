@@ -9,30 +9,17 @@ def binary_tree() -> TreeNode:
         val=5,
         left=TreeNode(
             val=4,
-            left=TreeNode(
-                val=11,
-                left=TreeNode(val=7),
-                right=TreeNode(val=2)
-            ),
+            left=TreeNode(val=11, left=TreeNode(val=7), right=TreeNode(val=2)),
         ),
         right=TreeNode(
-            val=8,
-            left=TreeNode(val=13),
-            right=TreeNode(
-                val=4,
-                right=TreeNode(val=1)
-            )
-        )
+            val=8, left=TreeNode(val=13), right=TreeNode(val=4, right=TreeNode(val=1))
+        ),
     )
 
 
 @pytest.fixture
 def binary_tree_2() -> TreeNode:
-    return TreeNode(
-        val=1,
-        left=TreeNode(val=2)
-    )
-
+    return TreeNode(val=1, left=TreeNode(val=2))
 
 
 def test_has_path_sum(binary_tree: TreeNode):

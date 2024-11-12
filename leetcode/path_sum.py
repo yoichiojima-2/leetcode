@@ -1,6 +1,5 @@
 from pprint import pprint
 from leetcode.libs.binary_tree import TreeNode
-from pprint import pprint
 
 
 class Solution:
@@ -18,10 +17,7 @@ class Solution:
             ]
 
         elif not root.right:
-            return [
-                *[i + root.val for i in self.get_sums(root.left)],
-                root.val
-            ]
+            return [*[i + root.val for i in self.get_sums(root.left)], root.val]
 
         return [
             *[i + root.val for i in self.get_sums(root.left)],
@@ -29,6 +25,9 @@ class Solution:
         ]
 
     def hasPathSum(self, root: TreeNode | None, targetSum: int) -> bool:
+        if not root:
+            return False
+
         sums = self.get_sums(root)
 
         # [START debug]

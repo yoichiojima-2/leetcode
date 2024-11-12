@@ -9,6 +9,7 @@ class Solution:
         print(f"visiting...: {root.val}")
 
         if not root:
+            print("root is None")
             return [0]
 
         elif not root.left and not root.right:

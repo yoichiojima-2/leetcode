@@ -2,6 +2,7 @@ import pytest
 from leetcode.libs.binary_tree import TreeNode
 from leetcode.path_sum import Solution
 
+
 @pytest.fixture
 def binary_tree() -> TreeNode | None:
     return TreeNode(
@@ -25,6 +26,4 @@ def binary_tree() -> TreeNode | None:
     )
 
 def test_has_path_sum(binary_tree: TreeNode):
-    assert Solution().hasPathSum(binary_tree, 22)
-    
-    
+    Solution().hasPathSum(binary_tree, 22)

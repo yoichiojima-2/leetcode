@@ -26,4 +26,4 @@ def binary_tree() -> TreeNode | None:
     )
 
 def test_has_path_sum(binary_tree: TreeNode):
-    Solution().hasPathSum(binary_tree, 22)
+    assert Solution().hasPathSum(binary_tree, 22)

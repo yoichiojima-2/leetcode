@@ -7,7 +7,7 @@ class Solution:
         if not root:
             return [0]
 
-        elif not root.left and not root.right:
+        if not root.left and not root.right:
             return [root.val]
 
         elif not root.left:
@@ -24,16 +24,17 @@ class Solution:
             *[i + root.val for i in self.get_sums(root.right)],
         ]
 
+    def get_depth(self, root: TreeNode | None) -> int:
+        if not root:
+            return 0
+        return max(self.get_depth(root.left), self.get_depth(root.right)) + 1
+
+
     def hasPathSum(self, root: TreeNode | None, targetSum: int) -> bool:
         if not root:
             return False
 
-        sums = self.get_sums(root)
-
-        # [START debug]
-        pprint(root)
-        print(f"targetSum: {targetSum}")
-        print(f"sums: {sums}")
-        # [END debug]
-
-        return targetSum in sums
+        return (
+            (targetSum in self.get_sums(root.left) and self.get_depth(root.left) > 1)
+            or (targetSum in self.get_sums(root.right) and self.get_depth(root.right) > 1)
+        )

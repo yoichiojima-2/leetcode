@@ -32,3 +32,7 @@ def test_has_path_sum_1():
 
 def test_has_path_sum_2(binary_tree_2):
     assert not Solution().hasPathSum(binary_tree_2, 1)
+
+
+def test_has_path_sum_3():
+    assert Solution().hasPathSum(TreeNode(val=1), 1)

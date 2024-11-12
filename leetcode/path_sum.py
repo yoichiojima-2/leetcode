@@ -26,5 +26,6 @@ class Solution:
         ]
 
     def hasPathSum(self, root: TreeNode | None, targetSum: int) -> bool:
-        print(self.get_sums(root))
+        pprint(root)  # debug
+        print(f"get_sums: {self.get_sums(root)}") # debug
         return targetSum in self.get_sums(root)

@@ -19,3 +19,6 @@ jupyterlab = "^4.3.0"
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.ruff]
+line-length = 127

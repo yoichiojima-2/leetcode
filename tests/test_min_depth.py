@@ -17,9 +17,7 @@ def binary_tree_1() -> TreeNode:
 def binary_tree_2() -> TreeNode:
     return TreeNode(
         val=2,
-        right=TreeNode(
-            val=3, right=TreeNode(val=4, right=TreeNode(val=5, right=TreeNode(val=6)))
-        ),
+        right=TreeNode(val=3, right=TreeNode(val=4, right=TreeNode(val=5, right=TreeNode(val=6)))),
     )
 
 

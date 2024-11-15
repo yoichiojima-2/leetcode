@@ -15,9 +15,7 @@ def binary_tree() -> TreeNode:
             val=4,
             left=TreeNode(val=11, left=TreeNode(val=7), right=TreeNode(val=2)),
         ),
-        right=TreeNode(
-            val=8, left=TreeNode(val=13), right=TreeNode(val=4, right=TreeNode(val=1))
-        ),
+        right=TreeNode(val=8, left=TreeNode(val=13), right=TreeNode(val=4, right=TreeNode(val=1))),
     )
 
 

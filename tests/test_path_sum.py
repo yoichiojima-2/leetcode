@@ -22,17 +22,23 @@ def binary_tree_2() -> TreeNode:
     return TreeNode(val=1, left=TreeNode(val=2))
 
 
+@pytest.fixture
+def binary_tree_3() -> TreeNode:
+    return TreeNode(val=1)
+
+
+def test_has_path_sum_none():
+    assert not Solution().hasPathSum(None, 0)
+
+
 def test_has_path_sum(binary_tree: TreeNode):
     assert Solution().hasPathSum(binary_tree, 22)
 
 
-def test_has_path_sum_1():
-    assert not Solution().hasPathSum(None, 0)
-
-
-def test_has_path_sum_2(binary_tree_2):
+def test_has_path_sum_2(binary_tree_2: TreeNode):
     assert not Solution().hasPathSum(binary_tree_2, 1)
 
 
-def test_has_path_sum_3():
-    assert Solution().hasPathSum(TreeNode(val=1), 1)
+def test_has_path_sum_3(binary_tree_3: TreeNode):
+    assert Solution().hasPathSum(binary_tree_3, 1)
+

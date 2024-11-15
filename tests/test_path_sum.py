@@ -3,6 +3,10 @@ from leetcode.libs.binary_tree import TreeNode
 from leetcode.path_sum import Solution
 
 
+def test_has_path_sum_none():
+    assert not Solution().hasPathSum(None, 0)
+
+
 @pytest.fixture
 def binary_tree() -> TreeNode:
     return TreeNode(
@@ -17,9 +21,17 @@ def binary_tree() -> TreeNode:
     )
 
 
+def test_has_path_sum(binary_tree: TreeNode):
+    assert Solution().hasPathSum(binary_tree, 22)
+
+
 @pytest.fixture
 def binary_tree_2() -> TreeNode:
     return TreeNode(val=1, left=TreeNode(val=2))
+
+
+def test_has_path_sum_2(binary_tree_2: TreeNode):
+    assert not Solution().hasPathSum(binary_tree_2, 1)
 
 
 @pytest.fixture
@@ -27,18 +39,18 @@ def binary_tree_3() -> TreeNode:
     return TreeNode(val=1)
 
 
-def test_has_path_sum_none():
-    assert not Solution().hasPathSum(None, 0)
-
-
-def test_has_path_sum(binary_tree: TreeNode):
-    assert Solution().hasPathSum(binary_tree, 22)
-
-
-def test_has_path_sum_2(binary_tree_2: TreeNode):
-    assert not Solution().hasPathSum(binary_tree_2, 1)
-
-
 def test_has_path_sum_3(binary_tree_3: TreeNode):
     assert Solution().hasPathSum(binary_tree_3, 1)
 
+
+@pytest.fixture
+def binary_tree_4() -> TreeNode:
+    return TreeNode(val=1, left=TreeNode(val=2))
+
+
+def test_has_path_sum_4_1(binary_tree_4: TreeNode):
+    assert not Solution().hasPathSum(binary_tree_4, 2)
+
+
+def test_has_path_sum_4_2(binary_tree_4: TreeNode):
+    assert Solution().hasPathSum(binary_tree_4, 3)
